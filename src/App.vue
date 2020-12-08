@@ -62,6 +62,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import {MealsModule} from '@/store/modules/meals'
 
 @Component({
   components: {
@@ -79,6 +80,10 @@ export default class App extends Vue {
     "Samedi",
     "Dimanche",
   ];
+
+  mounted(){
+    MealsModule.fetchAll();
+  }
 }
 </script>
 
