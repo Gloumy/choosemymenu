@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="Groupe_26" data-name="Groupe 26" transform="translate(-16 -27)">
+    <circle id="Ellipse_5" data-name="Ellipse 5" cx="16" cy="16" r="16" transform="translate(16 27)" fill="#ddab00"/>
+    <g id="lock" transform="translate(-74.143 -6.143)">
+      <path id="Tracé_2" data-name="Tracé 2" d="M22.887,12.5a2.12,2.12,0,0,1,2.12,2.12v4.241a2.12,2.12,0,0,1-2.12,2.12H14.406a2.12,2.12,0,0,1-2.12-2.12V14.624a2.12,2.12,0,0,1,2.12-2.12v-2.12a4.241,4.241,0,1,1,8.481,0ZM18.647,7.556a2.827,2.827,0,0,1,2.827,2.827V12.5H15.82v-2.12A2.827,2.827,0,0,1,18.647,7.556Zm4.241,6.361H14.406a.707.707,0,0,0-.707.707v4.241a.707.707,0,0,0,.707.707h8.481a.707.707,0,0,0,.707-.707V14.624A.707.707,0,0,0,22.887,13.917Z" transform="translate(87.496 35.579)" fill="#fff" fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>
