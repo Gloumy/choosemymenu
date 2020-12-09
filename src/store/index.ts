@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import {IMealsState} from './modules/meals'
+import {MealsState} from './modules/meals'
 
 Vue.use(Vuex)
 
-export interface IRootState {
-  meals: IMealsState;
+export interface RootState {
+  meals: MealsState;
 }
 
-export default new Vuex.Store<IRootState>({});
+export default new Vuex.Store<RootState>({});

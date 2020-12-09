@@ -1,31 +1,31 @@
 import { VuexModule, Module, Mutation, getModule, Action } from 'vuex-module-decorators'
 import store from '@/store'
-import { Meal } from '@/models/meal';
 import MealsApi from '@/api/mealsapi'
+import { DayMeal } from '@/models/dayMeal';
 
 export interface MealsState {
-    meals: Array<Meal>;
+    meals: Array<DayMeal>;
 }
 
 @Module({ dynamic: true, store, name: 'meals' })
 class Meals extends VuexModule implements MealsState {
-    public meals = new Array<Meal>();
+    public meals = new Array<DayMeal>();
 
     @Mutation
-    private toggleLockMeal(index: number) {
+    public toggleLockMeal(index: number) {
         this.meals[index].locked = !this.meals[index].locked;
     }
 
     @Mutation
-    setMeals(meals: Meal[]) {
+    setMeals(meals: DayMeal[]) {
         this.meals = meals;
     }
 
-    @Action({commit: 'setMeals'})
+    @Action({ commit: 'setMeals' })
     async fetchAll() {
-        const response: Response = await MealsApi.getMeals();
-
-        return response;
+        const meals = await MealsApi.getMeals();
+        
+        return meals.map((m) => new DayMeal(m));
     }
 }
 

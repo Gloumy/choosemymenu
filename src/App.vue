@@ -26,13 +26,13 @@
         <div class="grid-container grid-container-padded">
           <div class="grid-x grid-margin-x">
             <div class="cell small-12">
-              <div class="small-12 cell list_item" v-for="day in days" :key="day">
+              <div class="small-12 cell list_item" v-for="(day, index) in days" :key="day">
                 <div class="grid-x grid-margin-x align-middle">
                   <div class="cell small-2">
-                    <img src="@/assets/img/cadenas-open.svg" alt="cadenas" />
+                    <img src="@/assets/img/cadenas-open.svg" alt="cadenas" @click.stop="toggleLock(index)" />
                   </div>
                   <div class="cell small-3 jour">{{ day }}</div>
-                  <div class="cell small-5 titre_recette">Meal name</div>
+                  <div class="cell small-5 titre_recette">Meal name {{index}}</div>
                   <div
                     class="cell small-2 photo_recette"
                     :style="`background-image: url()`"
@@ -83,6 +83,11 @@ export default class App extends Vue {
 
   mounted(){
     MealsModule.fetchAll();
+  }
+
+  private toggleLock(index: number) {
+    console.log('lock', index);
+    MealsModule.toggleLockMeal(index);
   }
 }
 </script>
