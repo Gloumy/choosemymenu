@@ -45,7 +45,7 @@
       </section>
       <div class="mobile-app-icon-bar">
         <button><img src="./assets/img/picto-list.svg" alt="Picto" /></button>
-        <button>
+        <button @click.stop="refreshMeals">
           <img
             class="choose"
             src="./assets/img/picto-melange.svg"
@@ -88,6 +88,11 @@ export default class App extends Vue {
   private toggleLock(index: number) {
     console.log('lock', index);
     MealsModule.toggleLockMeal(index);
+  }
+
+  private refreshMeals() {
+    console.log('refresh');
+    MealsModule.refresh();
   }
 }
 </script>
